@@ -1,2 +1,2 @@
-pcard>=0.1
+pcards>=1.2
 joblib>=0.12.1
