@@ -16,7 +16,7 @@ def powerset(iterable):
 
 def printHand(hand):
     for card in hand:
-        print(hand)
+        print hand
 
 def drawInitial(deck):
     return deck.draw(5)
@@ -58,13 +58,13 @@ def getNumberOfTries(job):
         deck.shuffle()
         hand = step(deck)
         if isRoyalFlush(hand):
-            print(job, "done")
+            print job, "done"
             break
     return i
 
 def runSimulation(n = 100, numCores = multiprocessing.cpu_count()):
-    print("Run", n, "simulations on", numCores, "cores:")
+    print "Run", n, "simulations on", numCores, "cores:"
     results = Parallel(n_jobs=numCores)(delayed(getNumberOfTries)(i) for i in range(0, n))
-    print(mean(results))
+    print mean(results)
 
 runSimulation(n = 10000)
