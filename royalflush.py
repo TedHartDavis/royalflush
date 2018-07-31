@@ -2,7 +2,6 @@ from pcards import Deck, Card
 from itertools import chain, combinations
 from joblib import Parallel, delayed
 import multiprocessing
-from statistics import mean
 
 # https://docs.python.org/2.7/library/itertools.html#recipes
 def powerset(iterable):
@@ -57,6 +56,10 @@ def getNumberOfTries(job):
 def runSimulation(n = 100, numCores = multiprocessing.cpu_count()):
     print "Run", n, "simulations on", numCores, "cores:"
     results = Parallel(n_jobs=numCores)(delayed(getNumberOfTries)(i) for i in range(0, n))
-    print mean(results)
+    total=0
+    for item in results:
+        total+=item
+    total=total/len(results)
+    print "Average: " + str(total)
 
 runSimulation(n = 10000)
