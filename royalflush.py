@@ -56,7 +56,7 @@ def getNumberOfTries(job):
     return i
 
 def runSimulation(n = 100, numCores = multiprocessing.cpu_count()):
-    print "Run", n, "simulations on", numCores, "cores:"
+    print "Running", n, "simulations on", numCores, "cores:"
     results = Parallel(n_jobs=numCores)(delayed(getNumberOfTries)(i) for i in range(0, n))
     total=0
     for item in results:
