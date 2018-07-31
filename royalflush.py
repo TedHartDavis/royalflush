@@ -1,3 +1,5 @@
+#! /usr/bin/python2
+
 from pcards import Deck, Card
 from itertools import chain, combinations
 from joblib import Parallel, delayed
