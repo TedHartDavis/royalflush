@@ -46,8 +46,8 @@ def isRoyalFlush(hand):
 
 def step(deck):
     firstDraw = drawInitial(deck)
-    holdedCards = holdCards(firstDraw)
-    secondDraw = drawMissing(deck, holdedCards)
+    heldCards = holdCards(firstDraw)
+    secondDraw = drawMissing(deck, heldCards)
     return secondDraw
 
 def getNumberOfTries(job):
