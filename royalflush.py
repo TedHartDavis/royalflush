@@ -62,7 +62,7 @@ def runSimulation(n = 100, numCores = multiprocessing.cpu_count()):
     total=total/len(results)
     print "Average: " + str(total)
 
-user_input = raw_input("How many instances of the simulation would you like to run? Default: 10000 ")
+user_input = raw_input("How many instances of the simulation would you like to run?\nDefault: 10000 ")
 
 try:
     f = int(user_input)
